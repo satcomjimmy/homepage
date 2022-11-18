@@ -1,0 +1,28 @@
+<!-- index home page for the Grocery App -->
+
+{% extends "base.html" %}
+{% block content %}
+<!--index.html-->
+{% if grocery_list%}
+<h3>Grocery List</h3>
+{% endif %}
+<ul>
+    {% for grocery in grocery_list %}
+    <li>
+        <div
+            role="button"
+            onclick="location.href='{% url "list" grocery_name.id %}'">
+            {{ grocery_name.title }}
+        </div>
+    </li>
+    {% empty %}
+    <h4>You have nothing on the list!</h4>
+    {% endfor %}
+</ul>
+<p>
+    <input
+        value="Add a new item"
+        type="button"
+        onclick="location.href='{% url "list-add" %}'"/>
+</p>
+{% endblock %}

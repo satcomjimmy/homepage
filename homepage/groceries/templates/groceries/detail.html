@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Details about grocery item</title>{% endblock %}
+</head>
+<style>
+    h1{
+        text-align:center;
+    }
+    </style>
+<body>
+{% block header %}<h1>Here are the details for {{ grocery_item }}</h1>{% endblock %}
+<p>Description: {{ grocery_desc }}</p>
+{% comment %} <p>We need this item on {{ when_needed }}.</p> {% endcomment %}
+</body>
+</html>
